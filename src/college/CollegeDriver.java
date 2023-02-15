@@ -19,7 +19,7 @@ public class CollegeDriver {
 		}
 	}
 
-	private static void test() throws InterruptedException {
+	private static void test() throws InterruptedException, NullPointerException {
 		while (player.getLocation() < Game.LAST_SQUARE) {
 			player.move(1);
 			if (player.getLocation() == 16 || player.getLocation() == 6) {
@@ -29,11 +29,13 @@ public class CollegeDriver {
 				System.out.println(dummy);
 				// TODO IF you want to test the change location squares,
 				//      you will have to invoke the action for the player's square on a dummy player
+				Game.squareAction.get(player.getLocation()).accept(dummy);
 				System.out.println(dummy);
 			}
 			else {
 				if (player.getLocation() < Game.LAST_SQUARE) {
 					// TODO invoke the action for the relevant square
+					Game.squareAction.get(player.getLocation()).accept(player);
 					System.out.println(player);
 				}
 			}
@@ -47,6 +49,7 @@ public class CollegeDriver {
 			player.move(Game.roll());
 			if (player.getLocation() < Game.LAST_SQUARE) {
 				// TODO invoke the action for the relevant square
+				Game.squareAction.get(player.getLocation()).accept(player);
 				System.out.println(player);
 			}
 			Thread.sleep(100);

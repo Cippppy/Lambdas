@@ -42,7 +42,34 @@ public class Game {
 		squareText.put(26, "GRADUATED!");
 	}
 	
-	
+	public static HashMap<Integer, Consumer<Player>> squareAction = new HashMap<Integer, Consumer<Player>>();
+	static {
+		squareAction.put(1, pName -> pName.setGpa(pName.getGpa() * 0.9));
+		squareAction.put(2, pName -> pName.setHappiness(pName.getHappiness() + 5));
+		squareAction.put(3, pName -> pName.setMoney(pName.getMoney() - 200));
+		squareAction.put(4, pName -> {pName.setHappiness(pName.getHappiness() + 10); pName.setGpa(pName.getGpa() - 0.2);});
+		squareAction.put(5, pName -> {pName.setHappiness(pName.getHappiness() - 3); pName.setGpa(pName.getGpa() + 0.1);});
+		squareAction.put(6, pName -> pName.move(2));
+		squareAction.put(7, pName -> pName.setNumberOfClubs(pName.getNumberOfClubs() + 1));
+		squareAction.put(8, pName -> pName.setNumberOfFriends(pName.getNumberOfFriends() + 1));
+		squareAction.put(9, pName -> pName.setGpa(pName.getGpa() * 1.2));
+		squareAction.put(10, pName -> {pName.setNumberOfFriends(pName.getNumberOfFriends() + 2); pName.setMoney(pName.getMoney() - 200);});
+		squareAction.put(11, pName -> {pName.setMoney(pName.getMoney() - 100); pName.setGpa(pName.getGpa() - 0.5);});
+		squareAction.put(12, pName -> pName.setMoney(pName.getMoney() + 220));
+		squareAction.put(13, pName -> pName.setNumberOfFriends(pName.getNumberOfFriends() - 1));
+		squareAction.put(14, pName -> pName.setNumberOfClubs(pName.getNumberOfClubs() + 1));
+		squareAction.put(15, pName -> {pName.setGpa(pName.getGpa() + 0.8); pName.setMoney(pName.getMoney() + 2000);});
+		squareAction.put(16, pName -> {pName.move(-3); pName.setGpa(pName.getGpa() - 0.5);});
+		squareAction.put(17, pName -> pName.setHappiness(pName.getHappiness() - 12));
+		squareAction.put(18, pName -> {pName.setHappiness(pName.getHappiness() + 10); pName.setMoney(pName.getMoney() + 1000);});
+		squareAction.put(19, pName -> pName.setGpa(pName.getGpa() + 1));
+		squareAction.put(20, pName -> pName.setNumberOfFriends(pName.getNumberOfFriends() + 2));
+		squareAction.put(21, pName -> pName.setMoney(pName.getMoney() - 300));
+		squareAction.put(22, pName -> {pName.setHappiness(pName.getHappiness() - 7); pName.setGpa(pName.getGpa() + 0.3);});
+		squareAction.put(23, pName -> {pName.setGpa(pName.getGpa() * 0.8); pName.setMoney(pName.getMoney() - 400);});
+		squareAction.put(24, pName -> {pName.setMoney(pName.getMoney() + 150); pName.setNumberOfFriends(pName.getNumberOfFriends() - 1);});
+		squareAction.put(25, pName -> {pName.setMoney(pName.getMoney() + 750); pName.setHappiness(pName.getHappiness() + 15);});
+	}
 
 	public static int roll() {
 	   return (int)(Math.random()*6+1);
