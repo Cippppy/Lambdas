@@ -1,18 +1,13 @@
-## Getting Started
+## The Game of College (Learning How to Use Lambdas)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+We will be building a board game, where a player rolls a dice and progresses through the board from Orientation to Graduation.
 
-## Folder Structure
+The Game class has a HashMap of all the text for each square indexed by square number.  You will need to complete the game.
 
-The workspace contains two folders by default, where:
+- Create, in the Game class a similar HashMap, but one that contains Consumers to represent the action of each square.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- Finish the play method in the Driver so that the player actions stored in the HashMap above are executed.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+You do not have to finish the test() method...but this might be helpful to you in troubleshooting, as it will exercise every square on the game board.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+![The Game of College Board](https://github.com/Cippppy/Lambdas/blob/master/theGameOfCollege.png)
